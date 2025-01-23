@@ -1,12 +1,9 @@
-import Header from "./components/Header"
-import Maincontent from "./components/Maincontent"
-import Footer from "./components/Footer"
+import WelcomeMesseage from "./components/WelcomeMesseage"
+
 function App() {
   return (
     <>
-      <Header/>
-      <Maincontent/>
-      <Footer/>
+   <WelcomeMesseage/>
     </>
   )
 }
