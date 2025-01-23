@@ -1,9 +1,12 @@
-import WelcomeMesseage from "./components/WelcomeMesseage"
+import Greetings from "./components/Greetings"
+import Productinfo from "./components/Productinfo"
+
 
 function App() {
   return (
     <>
-   <WelcomeMesseage/>
+      <Greetings />
+      <Productinfo/>
     </>
   )
 }
