@@ -1,12 +1,11 @@
-import Greetings from "./components/Greetings"
-import Productinfo from "./components/Productinfo"
-
+import ProductList from "./components/ProductList"
+import UserList from "./components/UserList"
 
 function App() {
   return (
     <>
-      <Greetings />
-      <Productinfo/>
+    <UserList/>
+    <ProductList/>
     </>
   )
 }
