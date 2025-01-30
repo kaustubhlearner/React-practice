@@ -1,11 +1,15 @@
-import ProductList from "./components/ProductList"
-import UserList from "./components/UserList"
+import { useState } from "react"
 
 function App() {
+  const [data, setdata] = useState(true)
+
+  function Change() {
+    setdata(!data)
+  }
   return (
     <>
-    <UserList/>
-    <ProductList/>
+      <p>{data ? "vikash" : "amit"}</p>
+      <button onClick={Change}>Change</button>
     </>
   )
 }
