@@ -1,15 +1,11 @@
-import { useState } from "react"
+import Header from "./components/Header"
+import Product from "./components/Product"
 
 function App() {
-  const [data, setdata] = useState(true)
-
-  function Change() {
-    setdata(!data)
-  }
   return (
     <>
-      <p>{data ? "vikash" : "amit"}</p>
-      <button onClick={Change}>Change</button>
+    <Header/>
+    <Product/>
     </>
   )
 }
