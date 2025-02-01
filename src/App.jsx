@@ -1,11 +1,16 @@
-import Header from "./components/Header"
-import Product from "./components/Product"
+import images from './Assets/dog.jpg'
 
 function App() {
   return (
     <>
-    <Header/>
-    <Product/>
+    <h1>kaustubh Todos</h1>
+    <img src={images} alt="" style={{height:"200px"}}/>
+    <ul>
+      <li>invent new traffic light</li>
+      <li>Reharse a movie Scene</li>
+      <li>Improve the spectrum technolgy</li>
+    </ul>
+    <button>Click me !</button>
     </>
   )
 }
