@@ -1,15 +1,14 @@
-import images from './Assets/dog.jpg'
-let name = (name) => {
-  alert(name)
-}
+import { useState } from "react"
+
 function App() {
-  const name = (name) => {
-    alert(name)
+  const [change, setchanage] = useState('apple')
+  function chnagereq() {
+    setchanage('Banana')
   }
-  
   return (
     <>
-<button onClick={()=>{name('kaustubh')}}>click me </button>
+      <h1>{change}</h1>
+      <button onClick={chnagereq}>click me</button>
     </>
   )
 }
