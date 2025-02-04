@@ -1,27 +1,18 @@
 import React, { useState } from 'react'
 
 const Checkbox = () => {
-    const [skills, setskills] = useState([])
-    const handleskills = (event) => {
-        if(event.target.checked){
-            setskills([...skills,event.target.value])
-        }
-        else{
-            setskills([...skills.filter((items)=>items!=event.target.value)])
-        }
-
-    }
-
+    const [gender, setgender] = useState('')
+ 
 return (
     <>
-        <h1>Select Your Skills</h1>
-        <input onChange={handleskills} type="checkbox" id="PHP" value={'PHP'} />
-        <label htmlFor="PHP">Php</label>
-        <input onChange={handleskills} type="checkbox" id='Javascript' value={"Javascript"} />
-        <label htmlFor="Javascript">Javascript</label>
-        <input onChange={handleskills} type="checkbox" id="Python" value={'Python'} />
-        <label htmlFor="python">Python</label>
-        <h1>{skills.toString()}</h1>
+    <h1>handle radio button</h1>
+    <input type="radio" name="gender" id="male"  value={'male'} onChange={(event)=>setgender(event.target.value)}/>
+    <label htmlFor="male">Male</label>
+    <br />
+    <input type="radio" name="gender" id="female" value={'female'} onChange={(event)=>setgender(event.target.value)}/>
+    <label htmlFor="female">Female</label>
+    <br />
+    <h1>Your selected Gender : {gender}</h1>
     </> 
 )
 }
