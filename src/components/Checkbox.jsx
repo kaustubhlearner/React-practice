@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 const Checkbox = () => {
     const [skills, setskills] = useState([])
     const handleskills = (event) => {
-        if(event.target.value){
+        if(event.target.checked){
             setskills([...skills,event.target.value])
+        }
+        else{
+            setskills([...skills.filter((items)=>items!=event.target.value)])
         }
 
     }
@@ -19,7 +22,7 @@ return (
         <input onChange={handleskills} type="checkbox" id="Python" value={'Python'} />
         <label htmlFor="python">Python</label>
         <h1>{skills.toString()}</h1>
-    </>
+    </> 
 )
 }
 
