@@ -2,13 +2,10 @@ import { useState } from "react"
 import Checkbox from "./components/Checkbox"
 
 function App() {
-  const [name, setname] = useState('')
-  const [password, setpassword] = useState('')
-  const [email, setemail] = useState('')
-
+  const [color, setcolor]= useState('green')
   return (
     <>
-  <Checkbox/>
+  <Checkbox  color={color}/>
     </>
   )
 }
