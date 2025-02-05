@@ -1,25 +1,17 @@
-import React, { useState } from 'react'
+import { useRef } from "react"
 
-const Checkbox = ({ college }) => {
-
+const Checkbox = () => {
+const about = useRef(null)
+const inputhandler = () =>{
+    about.current.focus()
+    about.current.style.color="red"
+    
+}
     return (
         <>
-            <h1>college name : {college.name}</h1>
-            <ul>
-                <li>
-                    <h3>City : {college.city}</h3>
-                </li>
-                <li>
-
-                    {
-                        college.students.map((students, index) => (
-                            <div key={index} >
-                                <h6>{students.name}</h6>
-                            </div>
-                        ))
-                    }
-                </li>
-            </ul>
+        <h1>handle use Ref</h1>
+        <input ref={about} type="text" placeholder="enter the name " />
+        <button onClick={inputhandler}>focus mode</button>
         </>
     )
 }
