@@ -4,9 +4,13 @@ const Checkbox = () => {
     const [datainfo, setdatainfo] = useState([])
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/comments')
-            .then(res => res.json())
-            .then(data => setdatainfo(data))
+        const apidata = async () => {
+            let response = await fetch('https://jsonplaceholder.typicode.com/comments')
+            const info = await response.json()
+            const data = setdatainfo(info)
+        }
+        apidata()
+
     })
     return (
         <>
