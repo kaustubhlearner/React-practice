@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react"
 
-const Checkbox = ({alertbutton}) => {
-    const name = "akhilesh"
+const Checkbox = () => {
+    const [datainfo, setdatainfo] = useState([])
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/comments')
+            .then(res => res.json())
+            .then(data => setdatainfo(data))
+    })
     return (
         <>
-     <button onClick={()=>alertbutton(name)}>Alert</button>
+            <ul>
+                {datainfo.map((dtat, index) => (
+                    <li key={index}>{dtat.id} | {dtat.name}</li>
+                ))}
+            </ul>
         </>
     )
 }
