@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const Checkbox = () => {
-    const [datainfo, setdatainfo] = useState([])
-
-    useEffect(() => {
-        const apidata = async () => {
-            let response = await fetch('https://jsonplaceholder.typicode.com/comments')
-            const info = await response.json()
-            const data = setdatainfo(info)
-        }
-        apidata()
-
-    })
+    const [user, setuser] = useState([])
+    const [users, setusers] = useState('')
+    const handlevent = () => {
+        setuser([...user, users])
+    }
+    const total = user.length
+    const lastuser = user[user.length - 1]
+    const unique = [...new Set(user)].length
     return (
         <>
-            <ul>
-                {datainfo.map((dtat, index) => (
-                    <li key={index}>{dtat.id} | {dtat.name}</li>
-                ))}
-            </ul>
+            <h1>Total user: {total}</h1>
+            <h1>Last User : {lastuser}</h1>
+            <h1>unique User: {unique}</h1>
+            <input onChange={(e) => setusers(e.target.value)} type="text" placeholder="add Something" />
+            <button onClick={handlevent}>add user</button>
+            {user.map((items, index) =>
+                <h4 key={index}>{items}</h4>
+            )}
         </>
     )
 }
